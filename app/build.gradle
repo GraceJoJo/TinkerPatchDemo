@@ -47,7 +47,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation"com.tinkerpatch.sdk:tinkerpatch-android-sdk:1.2.6"
-//    compile "com.android.support:multidex:1.0.1"
+    compile "com.android.support:multidex:1.0.1"
     compile 'com.meituan.android.walle:library:1.1.6'
 }
 walle {
@@ -56,5 +56,6 @@ walle {
     // 定制渠道包的APK的文件名称
     apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
     // 渠道配置文件
-    channelFile = new File("${project.getProjectDir()}/channel")
+    channelFile = new File("${project.getProjectDir()}/channel.txt")
 }
+

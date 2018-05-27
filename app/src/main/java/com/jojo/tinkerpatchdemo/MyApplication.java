@@ -1,6 +1,8 @@
 package com.jojo.tinkerpatchdemo;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.tencent.tinker.loader.app.ApplicationLike;
 import com.tinkerpatch.sdk.TinkerPatch;
@@ -17,12 +19,12 @@ public class MyApplication extends Application {
     private ApplicationLike tinkerAppLike;
 
 
-//    @Override
-//    public void attachBaseContext(Context base) {
-//        super.attachBaseContext(base);
-//        //you must install multiDex whatever tinker is installed!
-//        MultiDex.install(base);
-//    }
+    @Override
+    public void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        //you must install multiDex whatever tinker is installed!
+        MultiDex.install(base);
+    }
 
     @Override
     public void onCreate() {
